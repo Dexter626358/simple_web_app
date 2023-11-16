@@ -1,11 +1,13 @@
 <!-- templates/products/product_list.html -->
-<!DOCTYPE html>
-<html>
+{% extends 'webshop/base.html' %}
+
 <head>
     <title>Product List</title>
 </head>
 <body>
-    <h1>Product List</h1>
+{% block content %}
+
+    <h1>Список товаров</h1>
     {% for product in products %}
         <div>
             <h2>{{ product.name }}</h2>
@@ -14,5 +16,6 @@
             <img src="{{ product.image.url }}" alt="{{ product.name }}">
         </div>
     {% endfor %}
+{% endblock %}
 </body>
 </html>

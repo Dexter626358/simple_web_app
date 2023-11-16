@@ -1,3 +1,7 @@
+import random
+from datetime import date
+from decimal import Decimal
+
 from django.shortcuts import render
 
 from webshop.forms import CallBackForm
@@ -38,5 +42,18 @@ def order_call(request):
 
 
 def product_list(request):
-    products = Product.objects.all()
+    adjectives = ['Прекрасный', 'Строгий', 'Элегантный', 'Современный', 'Удобный']
+    nouns = ['стул', 'стол', 'диван', 'кресло', 'шкаф']
+    products = []
+    for i in range(1, 11):
+        product = {
+                'name': f'Product {i}',
+                'price': Decimal(random.uniform(1.0, 1000.0)),
+                'description': f"{random.choice(adjectives)} {random.choice(nouns)}",
+                'quantity': random.randint(1, 100),
+                'added_date': date.today(),
+                'image': f'path/to/image{i}.jpg',
+            }
+        products.append(product)
+    #products = Product.objects.all()
     return render(request, 'webshop/product_list.html', {'products': products})
