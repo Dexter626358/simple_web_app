@@ -1,6 +1,7 @@
 from django.shortcuts import render
 
 from webshop.forms import CallBackForm
+from webshop.models import Product
 
 
 # Create your views here.
@@ -34,3 +35,8 @@ def order_call(request):
         form = CallBackForm()
 
     return render(request, 'webshop/order_call.html', {'form': form})
+
+
+def product_list(request):
+    products = Product.objects.all()
+    return render(request, 'webshop/product_list.html', {'products': products})
