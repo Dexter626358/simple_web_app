@@ -1,0 +1,15 @@
+{% extends 'webshop/base.html' %}
+
+{% block title %}Заказать звонок{% endblock %}
+
+{% block content %}
+    <h1>Введите Ваш номер телефона</h1>
+    <form method="post" action="{% url 'order_call' %}">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Заказать звонок</button>
+    </form>
+
+{% endblock %}
+
+<!-- myapp/templates/order_call/order_call.html -->
