@@ -1,5 +1,42 @@
 <!-- templates/products/product_list.html -->
 {% extends 'webshop/base.html' %}
+{% block styles %}
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+
+    h1 {
+        color: #333;
+    }
+
+    .product-container {
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        margin: 10px;
+        padding: 15px;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+        color: #3498db;
+    }
+
+    p {
+        color: #555;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        margin-top: 10px;
+    }
+</style>
+{% endblock %}
 
 <head>
     <title>Product List</title>
