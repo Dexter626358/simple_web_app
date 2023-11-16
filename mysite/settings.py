@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'webshop'
 ]
 
 MIDDLEWARE = [
@@ -78,14 +79,25 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': os.environ["railway"],
+#         'USER': os.environ["postgres"],
+#         'PASSWORD': os.environ["FCC6Gd43Ed-*55A3agG1a4b21eB15Cgg"],
+#         'HOST': os.environ["viaduct.proxy.rlwy.net"],
+#         'PORT': os.environ["12424"],
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.environ["PGDATABASE"],
-        'USER': os.environ["PGUSER"],
-        'PASSWORD': os.environ["PGPASSWORD"],
-        'HOST': os.environ["PGHOST"],
-        'PORT': os.environ["PGPORT"],
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'FCC6Gd43Ed-*55A3agG1a4b21eB15Cgg',
+        'HOST': 'viaduct.proxy.rlwy.net',
+        'PORT': '12424',
     }
 }
 
